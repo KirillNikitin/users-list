@@ -1,0 +1,177 @@
+.main {
+
+  input {
+    &.search {
+      margin: 1rem 2rem 0;
+      outline: none;
+      border: 2px solid;
+      border-radius: 4px;
+      line-height: 1.8em;
+      font-size: 1em;
+      padding: 4px 8px;
+      border-color: #eee;
+    }
+  }
+
+  button {
+    background-color: #0f00ae;
+    color: #fafafa;
+    border-radius: 4px;
+    padding: 0.4em 2.4em 0.4em 1em;
+    font-size: 1em;
+    position: relative;
+
+    &.sort-button {
+
+      &:before {
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+        border-bottom: 8px solid #fafafa;
+        right: 10px;
+        top: 42%;
+        position: absolute;
+        content: '';
+      }
+
+      &.sort-reverse {
+        &:before {
+          border-bottom: 5px solid transparent;
+          border-left: 5px solid transparent;
+          border-top: 8px solid #fafafa;
+          right: 10px;
+          top: 42%;
+          position: absolute;
+          content: '';
+        }
+      }
+    }
+  }
+}
+
+.container {
+  margin: 3rem auto;
+  padding: 2rem;
+
+  /* display properties */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  gap: 20px 30px;
+
+  /* UI properties */
+  background-color: rgb(104, 90, 201);
+
+  .user {
+    height: 100%;
+    width: 100%;
+    background-color: #fefefe;
+    border: 1px solid #f7f7f7;
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 8px 16px;
+
+    .user-name {
+      font-size: 18px;
+      font-weight: 500;
+      color: #555;
+      padding: 0.2rem 0;
+    }
+
+    .user-email,
+    .user-phone,
+    .user-website,
+    .user-address {
+      font-size: 14px;
+      font-weight: 400;
+      color: #999;
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+/*  Mobile view */
+@media screen and (min-width: 0px) and (max-width:480px) {
+  .main {
+    input {
+      &.search {
+        display: block;
+        width: 100%;
+        border-radius: 3px;
+        line-height: 2.2em;
+        font-size: 1.2em;
+        position: fixed;
+        top: 0;
+        margin: 0;
+      }
+    }
+
+    button {
+      width: 100%;
+      border-radius: 3px;
+      font-size: 1.1em;
+      position: fixed;
+      top: 3.5rem;
+      margin: 0;
+
+    }
+  }
+
+
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0.8rem;
+    margin-top: 7rem;
+    gap: 10px 12px;
+    background-color: #fafafa;
+
+    .user {
+      width: 100%;
+      border-radius: 4px;
+      margin: 5px;
+
+      .user-name {
+        font-weight: 700;
+      }
+
+      .user-email,
+      .user-phone,
+      .user-website,
+      .user-address {
+        font-size: 16px;
+        font-weight: 500;
+        color: #888;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}
+
+/* Tablet View */
+@media screen and (min-width:481px) and (max-width:768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Laptop View */
+@media screen and (min-width:769px) and (max-width:1024px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desctop View */
+@media screen and (min-width:1025px) {
+  .main {
+    input {
+      &.search {
+        margin-left: 5rem;
+      }
+    }
+  }
+
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
