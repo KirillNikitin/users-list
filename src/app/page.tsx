@@ -2,7 +2,7 @@
 
 import { useQuery } from "react-query";
 import { Cards } from "./components/Cards";
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { FilterObject, User } from "./interfaces/Interfaces";
 
 export default function Home() {
@@ -52,12 +52,11 @@ export default function Home() {
   }
 
   useEffect(() => {
-    const data = search(filters, users); // 
+    const data = search(filters, users);
     setFilteredData(data!);
   }, [filters, users])
 
   return (
-
     <div className="main">
       <input
         type="text"
@@ -66,8 +65,6 @@ export default function Home() {
         onChange={handleInput}
       />
       <Cards {... { filteredData, isLoading }} />
-
     </div>
   );
 }
-

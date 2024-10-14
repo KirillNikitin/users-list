@@ -1,7 +1,8 @@
-import { MouseEventHandler, useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { User } from "../interfaces/Interfaces"
 import { SortKeys, SortOrder } from "../types/Types";
 import "../styles/style.scss";
+import { SortButton } from "./SortButton";
 
 function sortData({
   cardsData,
@@ -23,30 +24,6 @@ function sortData({
   }
 
   return sortedData;
-}
-
-function SortButton({
-  sortOrder,
-  columnKey,
-  sortKey,
-  onClick,
-}: {
-  sortOrder: SortOrder;
-  columnKey: SortKeys;
-  sortKey: SortKeys;
-  onClick: MouseEventHandler<HTMLButtonElement>;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className={`${sortKey === columnKey && sortOrder === "desc"
-        ? "sort-button sort-reverse"
-        : "sort-button"
-        }`}
-    >
-      Sort by name
-    </button>
-  );
 }
 
 export const Cards = ({ ...props }: { filteredData: User[], isLoading: boolean }) => {

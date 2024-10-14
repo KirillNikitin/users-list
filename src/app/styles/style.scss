@@ -96,23 +96,23 @@
     input {
       &.search {
         display: block;
-        width: 100%;
+        width: 94%;
+        margin: .5% 3%;
         border-radius: 3px;
         line-height: 2.2em;
         font-size: 1.2em;
         position: fixed;
         top: 0;
-        margin: 0;
       }
     }
 
     button {
-      width: 100%;
+      width: 94%;
       border-radius: 3px;
       font-size: 1.1em;
       position: fixed;
       top: 3.5rem;
-      margin: 0;
+      margin: 0 3%;
 
     }
   }
